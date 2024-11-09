@@ -1,39 +1,32 @@
 //script.js
 
-//Get references to all audio elements and checkboxes
-const audioElements = [
-    document.getElementById('birds'),
-    document.getElementById('trees'),
-    document.getElementById('stream'),
-    document.getElementById('frog'),
-];
-const checkboxes = document.querySelectorAll('[data-track]');
+// play wind always
+var wind = document.getElementById('audio0');
+wind.play();
+wind.loop = true;
 
-//Play selected audio tracks + wimd
-document.getElementById('play-selected').addEventListener('click', () => {
-    if (wind.paused) {
-        wind.play();
-    }
+// Helper function to handle looping audio with a checkbox
+function handleLoopWithCheckbox(checkboxId, audioId) {
+    var audio = document.getElementById(audioId); // Get the audio element by ID
+    var checkbox = document.getElementById(checkboxId); // Get the checkbox element by ID
 
-    //Play selected
-    audioElements.forEach((audio, index) => {
-        if (checkboxes[index].checked) {
-            audio.play();
+    // Add an event listener to handle checkbox change
+    checkbox.addEventListener('change', function() {
+        if (checkbox.checked) {
+            // If the checkbox is checked, start the audio and enable looping
+            audio.play(); // Play the audio
+            audio.loop = true; // Enable looping
         } else {
-            audio.pause();
-            audio.currentTime = 0;
+            // If the checkbox is unchecked, stop the audio and disable looping
+            audio.loop = false; // Disable looping
+            audio.pause(); // Pause the audio
+            audio.currentTime = 0; // Reset the audio to the start
         }
     });
-});
+}
 
-document.getElementById('stop-all').addEventListener('click', ()  => {
-    wind.pause();
-    wind.currentTime = 0;
-
-    //Stop selected
-    audioElements.forEach(audio => {
-        audio.pause();
-        audio.currentTime = 0;
-    });
-    checkboxes.forEach(checkbox => checkbox.checked = false);
-});
+// Call the helper function for each audio checkbox
+handleLoopWithCheckbox('loopCheckbox1', 'audio1');
+handleLoopWithCheckbox('loopCheckbox2', 'audio2');
+handleLoopWithCheckbox('loopCheckbox3', 'audio3');
+handleLoopWithCheckbox('loopCheckbox4', 'audio4');
