@@ -80,12 +80,36 @@ button:hover {
 </ul>
 </nav>
 <h1>Sounds of the Forest</h1>
-<h2>Animals</h2>
-<ul>
-<li>Fox</li>
-<li>Racoon</li>
-<li>Squirrel</li>
-<li>Grizzly Bear</li>
-</ul>
+
+
+<div id="audio-player">
+  <audio id="wind" src="harsh wind blow loop.mp3"></audio>
+
+  <div class="audio-control">
+    <input type="checkbox" id="birds-track-checkbox" data-track="1">
+    <label for="birds-track-checkbox">Birds</label>
+    <audio id="birds" src="bird noise lop.mp3"></audio>
+  </div>
+  <div class="audio-control">
+    <input type="checkbox" id="stream-track-checkbox" data-track="2">
+    <label for="stream-track-checkbox">Stream</label>
+    <audio id="stream" src="water stream loop.mp3"></audio>
+  </div>
+  <div class="audio-control">
+    <input type="checkbox" id="frog-track-checkbox" data-track="3">
+    <label for="frog-track-checkbox">Frogs</label>
+    <audio id="frog" src="frog ribbit loop.mp3"></audio>
+  </div>
+  <div class="audio-control">
+    <input type="checkbox" id="tree-track-checkbox" data-track="4">
+    <label for="tree-track-checkbox">Trees</label>
+    <audio id="trees" src="rustle leave loop.mp3"></audio>
+  </div>
+  <button id="play-selected">Play</button>
+  <button id="stop-all">Stop All</button>
+</div>
+
+
+<script src="sound.js"></script>
 </body>
 </html>
