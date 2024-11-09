@@ -69,6 +69,9 @@ input[type="checkbox"] {
 #audio-player {
 font-size: 30px;
 }
+#audio {
+display: inline-block;
+}
 </style>
 </head>
 <body>
@@ -81,7 +84,8 @@ font-size: 30px;
 </ul>
 </nav>
 <h1>Sounds of the Forest</h1>
-
+<p id="frontPG"><img src="homePic.jpeg" alt="forest clipart image" width="500"/></p>
+<nav id="audio">
 
 <div id="audio-player">
   <audio id="wind" src="harsh wind blow loop.mp3"></audio>
@@ -109,7 +113,7 @@ font-size: 30px;
   <button id="play-selected">Play</button>
   <button id="stop-all">Stop All</button>
 </div>
-
+</nav>
 
 <script src="sound.js"></script>
 </body>
