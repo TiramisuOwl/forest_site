@@ -81,33 +81,26 @@ button:hover {
 </nav>
 <h1>Sounds of the Forest</h1>
 
+<audio id="audio1" src="bird noise lop.mp3"></audio>
+<audio id="audio2" src="water stream loop.mp3"></audio>
+<audio id="audio3" src="frog ribbit loop.mp3"></audio>
+<audio id="audio4" src="rustle leave loop.mp3"></audio>
 
-<div id="audio-player">
-  <audio id="wind" src="harsh wind blow loop.mp3"></audio>
+<label>
+  <input type="checkbox" id="loopCheckbox1"> Birds
+</label><br>
 
-  <div class="audio-control">
-    <input type="checkbox" id="birds-track-checkbox" data-track="1">
-    <label for="birds-track-checkbox">Birds</label>
-    <audio id="birds" src="bird noise lop.mp3"></audio>
-  </div>
-  <div class="audio-control">
-    <input type="checkbox" id="stream-track-checkbox" data-track="2">
-    <label for="stream-track-checkbox">Stream</label>
-    <audio id="stream" src="water stream loop.mp3"></audio>
-  </div>
-  <div class="audio-control">
-    <input type="checkbox" id="frog-track-checkbox" data-track="3">
-    <label for="frog-track-checkbox">Frogs</label>
-    <audio id="frog" src="frog ribbit loop.mp3"></audio>
-  </div>
-  <div class="audio-control">
-    <input type="checkbox" id="tree-track-checkbox" data-track="4">
-    <label for="tree-track-checkbox">Trees</label>
-    <audio id="trees" src="rustle leave loop.mp3"></audio>
-  </div>
-  <button id="play-selected">Play</button>
-  <button id="stop-all">Stop All</button>
-</div>
+<label>
+  <input type="checkbox" id="loopCheckbox2"> Stream
+</label><br>
+
+<label>
+  <input type="checkbox" id="loopCheckbox3"> Frogs
+</label><br>
+
+<label>
+  <input type="checkbox" id="loopCheckbox4"> Trees
+</label><br>
 
 
 <script src="sound.js"></script>
