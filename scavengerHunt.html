@@ -9,6 +9,7 @@ background-color: #007700;
 body {
 font-family: Arial, Helvetica, sans-serif;
 background-color: #AAEEBB;
+color: #007700;
 }
 h1 {
 text-align: center;
@@ -27,7 +28,7 @@ border: 4px solid #007700;
 border-radius: 10px;
 */
 font-weight: bold;
-padding: 8px;
+/*padding: 8px;*/
 }
 nav ul li {
 display: inline;
@@ -54,14 +55,17 @@ color: #007700;
 button {
   border: none;
   background-color: #99DDAA;
-  padding: 15px 32px;
+  padding: 20px 32px;
   /*text-align: center;*/
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
   font-weight: bold;
-  margin: 4px 2px;
+  /*margin: 4px 2px;*/
   cursor: pointer;
+}
+button:hover {
+  background-color: #A8ECB9;
 }
 </style>
 </head>
@@ -75,7 +79,8 @@ button {
 </ul>
 </nav>
 <h1>Scavenger Hunt</h1>
-<form>
+<h3 id="intro">Here's a fun little scavenger hunt to play! Go outside and start hunting (if you'd like)</h3>
+<form id="hunt">
   <input type="checkbox" id="rabbit" name="rabbit" value="1">
   <label for="rabbit"> Rabbit</label><br>
   <input type="checkbox" id="mushroom" name="mushroom" value="1">
@@ -90,7 +95,7 @@ button {
   <label for="flower"> Any type of flower</label><br>
   <input type="checkbox" id="pine-cone" name="pine-cone" value="1">
   <label for="pine-cone"> Pine cone</label><br><br>
-  <input type="submit" value="All done">
+  <button id="doneBtn" onclick="alert('Well done!')">All done</button>
 </form>
 </body>
 </html>
