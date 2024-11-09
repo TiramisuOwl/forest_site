@@ -1,4 +1,10 @@
 //script.js
+
+// play wind always
+var wind = document.getElementById('audio0');
+wind.play();
+wind.loop = true;
+
 // Helper function to handle looping audio with a checkbox
 function handleLoopWithCheckbox(checkboxId, audioId) {
     var audio = document.getElementById(audioId); // Get the audio element by ID
