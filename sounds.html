@@ -46,12 +46,6 @@ nav ul li a {
 text-decoration: none;
 color: #007700;
 }
-#frontPG {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 70%
-}
 button {
   border: none;
   background-color: #99DDAA;
@@ -67,7 +61,17 @@ button {
 button:hover {
   background-color: #A8ECB9;
 }
-
+input[type="checkbox"] {
+  width: 1.5em;
+  height: 1.5rem;
+  accent-color: green;
+}
+#audio-player {
+font-size: 30px;
+}
+#audio {
+display: inline-block;
+}
 </style>
 </head>
 <body>
@@ -81,11 +85,9 @@ button:hover {
 </nav>
 <h1>Sounds of the Forest</h1>
 
-<audio id="audio0" src="harsh wind blow loop.mp3"></audio>
-<audio id="audio1" src="bird noise lop.mp3"></audio>
-<audio id="audio2" src="water stream loop.mp3"></audio>
-<audio id="audio3" src="frog ribbit loop.mp3"></audio>
-<audio id="audio4" src="rustle leave loop.mp3"></audio>
+<p id="frontPG"><img src="homePic.jpeg" alt="forest clipart image" width="500"/></p>
+<nav id="audio">
+
 
 <label>
   <input type="checkbox" id="loopCheckbox1"> Birds
@@ -102,7 +104,6 @@ button:hover {
 <label>
   <input type="checkbox" id="loopCheckbox4"> Trees
 </label><br>
-
 
 <script src="sound.js"></script>
 </body>
