@@ -58,7 +58,7 @@ function checkboxAudioNight(checkboxId, nightCheckbox, audioId1, audioId2) {
 
     // when switching to day/night, turn off the audio from the opposite time cycle
     nightBox.addEventListener('change', function() {
-        if (checkbox.checked) { // currently night, switch off day
+        if (nightBox.checked) { // currently night, switch off day
             audioDay.pause();
             audioDay.loop = false;
             audioDay.currentTime = 0;
