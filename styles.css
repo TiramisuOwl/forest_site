@@ -1,0 +1,32 @@
+/* Container for the main image and overlays */
+#image-container {
+  position: relative;
+  width: 100%; /* Make the container responsive */
+  height: 500px; /* Adjust height as needed for your layout */
+  overflow: hidden; /* Prevent any overflow */
+}
+
+/* Main image */
+#forestImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the main image covers the entire container without distortion */
+}
+
+/* Overlay images should be positioned absolutely on top of the main image */
+#overlay1, #overlay2, #overlay3 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;  /* Make sure overlay images are scaled to fit container */
+  height: 100%; /* Ensure overlays don't overflow the container */
+  display: none; /* Hide overlays initially */
+  z-index: 1; /* Ensure overlays are above the main image */
+  object-fit: cover; /* Ensures overlay images cover the container appropriately */
+}
+
+/* If needed, you can style the checkboxes for better visibility */
+input[type="checkbox"] {
+  position: relative;
+  z-index: 2; /* Ensure checkboxes are above overlays */
+}
