@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -92,13 +93,33 @@ margin-left: 30px;
       overflow: hidden;
     }
     .slides {
-      display: flex;
-      transition: transform 1s ease-in-out;
+    display: flex;
+    transition: transform 1s ease-in-out;
     }
-    .slides img {
-      width: 100%;
-      height: auto;
+
+    .slides figure {
+    position: relative;
+    min-width: 100%; /* Each figure takes up full container width */
+    margin: 0;
     }
+
+   .slides img {
+   width: 100%;
+   height: auto;
+   }
+
+   .slides figcaption {
+   position: absolute;
+   bottom: 10px; /* Position the caption at the bottom of each slide */
+   left: 0;
+   width: 100%;
+   text-align: center;
+   background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
+   color: white;
+   padding: 10px;
+   font-size: 16px;
+   font-weight: bold;
+   }
     /* Navigation buttons */
     .prev, .next {
       position: absolute;
@@ -134,16 +155,27 @@ margin-left: 30px;
 <li><button><a href="info.html">Forest Info</a></button></li>
 </ul>
 </nav>
-<h1>Forest Info</h1>
+<h1>Types of Forests</h1>
 <div id="main">
-<h2>Types of Forests</h2>
 <div class="container">
 <div class="slideshow-container">
     <div class="slides">
-      <img src="tropical.jpg" alt="Tropical Rainforest">
-      <img src="tempRain.jpg" alt="Temperate Rainforest">
-      <img src="tempDec.jpg"alt="Temperate Deciduous Forest">
-      <img src="taiga.jpg" alt="Boreal Forest">
+      <figure>
+        <img src="tropical.jpg" alt="Tropical Rainforest">
+        <figcaption>Tropical Rainforest, photograph by Darius Krause</figcaption>
+      </figure>
+      <figure>
+        <img src="tempRain.jpg" alt="Temperate Rainforest">
+        <figcaption>Temperate Rainforest, photograph by Alex Moliski</figcaption>
+      </figure>
+      <figure>
+        <img src="tempDec.jpg" alt="Temperate Deciduous Forest">
+        <figcaption>Temperate Deciduous Forest, photograph by Diego Gonzalez</figcaption>
+      </figure>
+      <figure>
+        <img src="taiga.jpg" alt="Boreal Forest">
+        <figcaption>Boreal Forest, photograph by Tomas Malik</figcaption>
+      </figure>
     </div>
     
     <!-- Navigation buttons -->
