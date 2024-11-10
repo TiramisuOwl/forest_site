@@ -8,8 +8,8 @@
     position: absolute;
     top: 0;
     left: 0;
-    width: 75%; /* Make the images fill the container */
-    height: 75%;
+    width: 25%; /* Make the images fill the container */
+    height: 25%;
     object-fit: cover; /* Optional, makes sure images cover the area without distortion */
   }
   
