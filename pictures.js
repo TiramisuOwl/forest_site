@@ -5,17 +5,24 @@ const checkboxes = document.querySelectorAll('input[type="checkbox"]');
 // Function to update the image based on the selected checkboxes
 function updateImage() {
   // Start with the default forest background image
-  let newImageSrc = "dayBack.jpeg";
+  let newImageSrc = "dayBack.jpeg";  // Default image
 
   // Loop through all checkboxes and check if they are checked
   checkboxes.forEach(function(checkbox) {
     const overlayId = checkbox.getAttribute('data-overlay');
     const overlayImage = document.getElementById(overlayId);
 
-    // If the checkbox is checked, add the overlay to the new image source
+    // If the checkbox is checked, show the overlay image and update the main image
     if (checkbox.checked) {
       overlayImage.style.display = 'block';  // Show the overlay image
-      newImageSrc = overlayImage.src; // Change the forest background to the selected overlay
+      // You may want to change the main background based on the overlay selection
+      // Example: add custom logic here to combine the overlays with the main image
+      if (overlayImage) {
+        // Add custom logic to combine overlays with the main image, if needed
+        // E.g., change the forestImage background with a specific overlay
+        // Here we assume the main image updates based on the last checked overlay
+        newImageSrc = overlayImage.src; // Or some other logic to combine them
+      }
     } else {
       overlayImage.style.display = 'none';  // Hide the overlay image if unchecked
     }
@@ -32,3 +39,4 @@ checkboxes.forEach(function(checkbox) {
 
 // Initialize the image on page load
 updateImage();
+
