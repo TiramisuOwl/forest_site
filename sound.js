@@ -27,7 +27,7 @@ checkboxNightAmbience.addEventListener('change', function() {
         crickets.pause();
         crickets.loop = false;
         crickets.currentTime = 0;
-        background.src = 'background.jpeg';
+        background.src = 'homePic.jpeg';
         //wind.play();
         //wind.loop = true;
     }
