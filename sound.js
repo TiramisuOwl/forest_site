@@ -25,8 +25,8 @@ checkboxNightAmbience.addEventListener('change', function() {
         crickets.pause();
         crickets.loop = false;
         crickets.currentTime = 0;
-        wind.play();
-        wind.loop = true;
+        //wind.play();
+        //wind.loop = true;
     }
 })
 
