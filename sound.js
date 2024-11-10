@@ -1,9 +1,34 @@
 //script.js
 
-// play wind always
+// wind should be on by defualt
 var wind = document.getElementById('audio0');
 wind.play();
 wind.loop = true;
+
+var cicadas = document.getElementById('audio5');
+var crickets = document.getElementById('audio6');
+
+var checkboxNightAmbience = document.getElementById('loopCheckboxNight');
+checkboxNightAmbience.addEventListener('change', function() {
+    if (checkboxNightAmbience.checked) {
+        wind.pause();
+        wind.loop = false;
+        wind.currentTime = 0;
+        cicadas.play();
+        cicadas.loop = true;
+        crickets.play();
+        crickets.loop = true;
+    } else {
+        cicadas.pause();
+        cicadas.loop = false;
+        cicadas.currentTime = 0;
+        crickets.pause();
+        crickets.loop = false;
+        crickets.currentTime = 0;
+        wind.play();
+        wind.loop = true;
+    }
+})
 
 // Helper function to handle looping audio with a checkbox
 function checkboxAudio(checkboxId, audioId) {
