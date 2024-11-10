@@ -6,7 +6,7 @@ wind.play();
 wind.loop = true;
 
 // Helper function to handle looping audio with a checkbox
-function handleLoopWithCheckbox(checkboxId, audioId) {
+function checkboxAudio(checkboxId, audioId) {
     var audio = document.getElementById(audioId); // Get the audio element by ID
     var checkbox = document.getElementById(checkboxId); // Get the checkbox element by ID
 
@@ -25,8 +25,55 @@ function handleLoopWithCheckbox(checkboxId, audioId) {
     });
 }
 
+// for checkboxes with an alternate night audio
+function checkboxAudioNight(checkboxId, nightCheckbox, audioId1, audioId2) {
+    var audioDay = document.getElementById(audioId1);
+    var audioNight = document.getElementById(audioId2);
+    var checkbox = document.getElementById(checkboxId);
+    var nightBox = document.getElementById(nightCheckbox);
+
+    checkbox.addEventListener('change', function() {
+        if (checkbox.checked) {
+            // If the checkbox is checked, start the audio and enable looping
+            if (nightBox.checked) {
+                audioNight.play();
+                audioNight.loop = true;
+            } else {
+                audioDay.play();
+                audioDay.loop = true;
+            }
+        } else {
+            // If the checkbox is unchecked, stop the audio and disable looping
+            if (nightBox.checked) {
+                audioNight.pause(); // pause
+                audioNight.loop = false; // disable loop
+                audioNight.currentTime = 0; // reset audio to start
+            } else {
+                audioDay.pause();
+                audioDay.loop = false;
+                audioDay.currentTime = 0;
+            }
+        }
+    });
+
+    // when switching to day/night, turn off the audio from the opposite time cycle
+    nightBox.addEventListener('change', function() {
+        if (checkbox.checked) { // currently night, switch off day
+            audioDay.pause();
+            audioDay.loop = false;
+            audioDay.currentTime = 0;
+        } else { // currently day, switch off night
+            audioNight.pause();
+            audioNight.loop = false;
+            audioNight.currentTime = 0;
+        }
+        checkbox.dispatchEvent(new Event('change')); // simulate the checkbox change event, so the proper audio starts
+    })
+}
+
 // Call the helper function for each audio checkbox
-handleLoopWithCheckbox('loopCheckbox1', 'audio1');
-handleLoopWithCheckbox('loopCheckbox2', 'audio2');
-handleLoopWithCheckbox('loopCheckbox3', 'audio3');
-handleLoopWithCheckbox('loopCheckbox4', 'audio4');
+// checkboxAudio('loopCheckbox1', 'audio1'); // Birds
+checkboxAudioNight('loopCheckbox1', 'loopCheckboxNight', 'audio1', 'audio1_2');
+checkboxAudio('loopCheckbox2', 'audio2'); // Stream
+checkboxAudio('loopCheckbox3', 'audio3'); // Frogs
+checkboxAudio('loopCheckbox4', 'audio4'); // Trees
