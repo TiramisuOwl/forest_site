@@ -1,12 +1,12 @@
 .stack-container {
     position: relative;
-    width: 500px;  /* Set your desired width */
+    width: 100px;  /* Set your desired width */
     height: auto; /* Set your desired height */
   }
   
   .stacked-image {
     position: absolute;
-    top: 0;
+    top: 500;
     left: 0;
     width: 25%; /* Make the images fill the container */
     height: 25%;
