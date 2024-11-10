@@ -7,6 +7,7 @@ wind.loop = true;
 
 var cicadas = document.getElementById('audio5');
 var crickets = document.getElementById('audio6');
+var background = document.getElementById('imagefront');
 
 var checkboxNightAmbience = document.getElementById('loopCheckboxNight');
 checkboxNightAmbience.addEventListener('change', function() {
@@ -18,6 +19,7 @@ checkboxNightAmbience.addEventListener('change', function() {
         cicadas.loop = true;
         crickets.play();
         crickets.loop = true;
+        background.src = 'night.jpeg';
     } else {
         cicadas.pause();
         cicadas.loop = false;
@@ -25,6 +27,7 @@ checkboxNightAmbience.addEventListener('change', function() {
         crickets.pause();
         crickets.loop = false;
         crickets.currentTime = 0;
+        background.src = 'homePic.jpeg';
         //wind.play();
         //wind.loop = true;
     }
