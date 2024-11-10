@@ -1,15 +1,29 @@
-.stack-container {
-    position: relative;
-    width: 100px;  /* Set your desired width */
-    height: auto; /* Set your desired height */
-  }
-  
-  .stacked-image {
-    position: absolute;
-    top: 500;
-    left: 0;
-    width: 25%; /* Make the images fill the container */
-    height: 25%;
-    object-fit: cover; /* Optional, makes sure images cover the area without distortion */
-  }
-  
+/* Container for the main image and overlays */
+#image-container {
+  position: relative;
+  width: 100%; /* Adjust width as needed */
+  height: 500px; /* Adjust height as needed */
+}
+
+/* Main image */
+#forestImage {
+  width: 100%;
+  height: 100%;
+}
+
+/* Overlay images should be positioned absolutely on top of the main image */
+#overlay1, #overlay2, #overlay3 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none; /* Hide overlays initially */
+  z-index: 1; /* Ensure overlays are above the main image but below other elements like checkboxes */
+}
+
+/* If needed, you can style the checkboxes for better visibility */
+input[type="checkbox"] {
+  position: relative;
+  z-index: 2; /* Ensure checkboxes are above overlays */
+}

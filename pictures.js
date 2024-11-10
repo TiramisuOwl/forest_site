@@ -12,17 +12,12 @@ function updateImage() {
     const overlayId = checkbox.getAttribute('data-overlay');
     const overlayImage = document.getElementById(overlayId);
 
-    // If the checkbox is checked, show the overlay image and update the main image
+    // If the checkbox is checked, show the overlay image
     if (checkbox.checked) {
       overlayImage.style.display = 'block';  // Show the overlay image
-      // You may want to change the main background based on the overlay selection
-      // Example: add custom logic here to combine the overlays with the main image
-      if (overlayImage) {
-        // Add custom logic to combine overlays with the main image, if needed
-        // E.g., change the forestImage background with a specific overlay
-        // Here we assume the main image updates based on the last checked overlay
-        newImageSrc = overlayImage.src; // Or some other logic to combine them
-      }
+      // If needed, update the main image (logic can vary based on overlay choices)
+      // Example: You can decide to update the main image based on the overlays
+      newImageSrc = overlayImage.src;  // Replace this with your logic for combining images
     } else {
       overlayImage.style.display = 'none';  // Hide the overlay image if unchecked
     }
