@@ -67,6 +67,62 @@ button {
 button:hover {
   background-color: #A8ECB9;
 }
+#sources {
+text-decoration: none;
+color: #007700;
+margin: 20px;
+}
+#main {
+margin-left: 30px;
+}
+
+/* Basic styling for the slideshow container */
+     .container {
+      display: flex;
+      justify-content: space-between; /* Space out the slideshow and text */
+      align-items: center; /* Vertically align items */
+      margin: 20px; /* Space around the container */
+    }
+
+    /* Styling for the slideshow container */
+    .slideshow-container {
+      position: relative;
+      width: 50%; /* Set the slideshow width to 50% of the container */
+      max-width: 500px; /* Limit the max width of the slideshow */
+      overflow: hidden;
+    }
+    .slides {
+      display: flex;
+      transition: transform 1s ease-in-out;
+    }
+    .slides img {
+      width: 100%;
+      height: auto;
+    }
+    /* Navigation buttons */
+    .prev, .next {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      padding: 10px;
+      color: white;
+      background-color: rgba(0, 0, 0, 0.5);
+      border: none;
+      font-size: 18px;
+      cursor: pointer;
+    }
+    .prev {
+      left: 0;
+    }
+    .next {
+      right: 0;
+    }
+    .text-container {
+      width: 45%; /* Set the width of the text container */
+      padding: 20px;
+      font-size: 18px;
+      line-height: 1.6;
+    }
 </style>
 </head>
 <body>
@@ -79,12 +135,98 @@ button:hover {
 </ul>
 </nav>
 <h1>Forest Info</h1>
+<div id="main">
 <h2>Types of Forests</h2>
+<div class="container">
+<div class="slideshow-container">
+    <div class="slides">
+      <img src="tropical.jpg" alt="Tropical Rainforest">
+      <img src="tempRain.jpg" alt="Temperate Rainforest">
+      <img src="tempDec.jpg"alt="Temperate Deciduous Forest">
+      <img src="taiga.jpg" alt="Boreal Forest">
+    </div>
+    
+    <!-- Navigation buttons -->
+    <button class="prev">&#10094;</button>
+    <button class="next">&#10095;</button>
+</div>
+<div class="text-container">
 <ul>
-<li>Tropical rainforest</li>
-<li>Temperate rainforest</li>
-<li>Temperate deciduous forest</li>
-<li>Boreal forest (aka Taiga)</li>
+<li>
+<strong>Tropical rainforest</strong> - a hot, humid biome that experiences year-round rain and features three distinct layers of vegetation
+<ul>
+<li>Canopy (top layer): tall trees that block sunlight from reaching the ground</li>
+<li>Understory (middle layer): smaller trees, ferns, and palms</li>
+<li>Forest floor (bottom layer): decomposing leaves and microorganisms that break down and recycle plant material</li>
 </ul>
+</li>
+<li><strong>Temperate rainforest</strong> - a biome characterized by:
+<ul>
+<li>A mix of broad-leaved and coniferous trees</li>
+<li>Abundant moisture year-round</li>
+<li>Mild temperatures</li>
+<li>Several forms of percipitation, including heavy rain and coastal fog</li>
+</ul>
+</li>
+<li><strong>Temperate deciduous forest</strong> - a biome that experiences four distinct seasons that vary in temperature:
+<ul>
+<li>Cold winters in which trees experience a dormancy period</li>
+<li>Mild springs in which trees grow and flower</li>
+<li>Hot, wet summers</li>
+<Mild autumns in which trees shed their leaves in preparation for winter</li>
+</ul>
+</li>
+<li><strong>Boreal forest (aka Taiga)</strong> - a cold biome found between tundra and temperate forests. Few plants can grow in the taiga because of its frozen, nutrient-poor soil, but boreal forests typically feature:
+<ul>
+<li>Coniferous trees such as spruce, pine, and fir</li>
+<li>Mosses</li>
+<li>Lichens</li>
+<li>Mushrooms</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<h6><a id="sources" href="infoSources.html">Sources</a></h6>
+
+<script>
+    // Select elements
+    const slides = document.querySelector('.slides');
+    const images = document.querySelectorAll('.slides img');
+    const prevButton = document.querySelector('.prev');
+    const nextButton = document.querySelector('.next');
+    
+    let currentIndex = 0;
+    
+    // Function to show the current slide
+    function showSlide(index) {
+      const slideWidth = images[0].clientWidth;
+      slides.style.transform = `translateX(-${index * slideWidth}px)`;
+    }
+    
+    // Next slide function
+    function nextSlide() {
+      currentIndex = (currentIndex + 1) % images.length;
+      showSlide(currentIndex);
+    }
+    
+    // Previous slide function
+    function prevSlide() {
+      currentIndex = (currentIndex - 1 + images.length) % images.length;
+      showSlide(currentIndex);
+    }
+    
+    // Event listeners for buttons
+    nextButton.addEventListener('click', nextSlide);
+    prevButton.addEventListener('click', prevSlide);
+    
+    // Automatic slideshow every 3 seconds
+    //setInterval(nextSlide, 3000);
+
+    // Initialize the slideshow
+    showSlide(currentIndex);
+  </script>
+
+</div>
 </body>
 </html>
