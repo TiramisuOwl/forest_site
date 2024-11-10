@@ -95,30 +95,39 @@ display: inline-block;
 <audio id="audio5" src="cicada maybe.mp3"></audio>
 <audio id="audio6" src="cricket loop.mp3"></audio>
 
+
 <label>
   <input type="checkbox" id="loopCheckboxNight"> Night
 </label><br>
-
-<p id="frontPG"><img src="homePic.jpeg" alt="forest clipart image" width="500"/></p>
+<link rel="stylesheet" href="pictureFormating.css">
+<p id="frontPG"><img src="dayBack.jpeg" alt="forest clipart image" width="500"/></p>
 <nav id="audio">
-
+<div id="image-container">
+  <img src="dayBack.jpeg" alt="Day Background" id="day-back">
+  <img src="dayBird.jpeg" alt="Day Bird" class="overlay" id="day-bird">
+  <img src="dayStream.jpeg" alt="Day Stream" class="overlay" id="day-stream">
+  <img src="dayFrog.jpeg" alt="Day Frog" class="overlay" id="day-frog">
+  <img src="dayTrees.jpeg" alt="Day Trees" class="overlay" id="day-tree">
+</div>
 
 <label>
-  <input type="checkbox" id="loopCheckbox1"> Birds
+  <input type="checkbox" id="loopCheckbox1" data-overlay="day-bird"> Birds
 </label><br>
 
 <label>
-  <input type="checkbox" id="loopCheckbox2"> Stream
+  <input type="checkbox" id="loopCheckbox2" data-overlay="day-stream"> Stream
 </label><br>
 
 <label>
-  <input type="checkbox" id="loopCheckbox3"> Frogs
+  <input type="checkbox" id="loopCheckbox3" data-overlay="day-frog"> Frogs
 </label><br>
 
 <label>
-  <input type="checkbox" id="loopCheckbox4"> Trees
+  <input type="checkbox" id="loopCheckbox4" data-overlay="day-tree"> Trees
 </label><br>
 
 <script src="sound.js"></script>
+<script src="pictures.js"></script>
+
 </body>
 </html>
